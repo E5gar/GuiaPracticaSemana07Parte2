@@ -30,11 +30,11 @@ jobs:
           node-version: 22
 
       - name: Dependencias
-        working-directory: ./NOMBRE_CARPETA_PROYECTO
-        run: npm install
+        working-directory: ./dashboardmusichuanca
+        run: npm ci
 
       - name: Compilar
-        working-directory: ./NOMBRE_CARPETA_PROYECTO
+        working-directory: ./dashboardmusichuanca
         run: npx vite build --base=/${{ github.event.repository.name }}/
 
       - name: Setup Pages
@@ -43,7 +43,7 @@ jobs:
       - name: Artefacto
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './NOMBRE_CARPETA_PROYECTO/dist'
+          path: './dashboardmusichuanca/dist'
 
       - name: Desplegar
         id: deployment
