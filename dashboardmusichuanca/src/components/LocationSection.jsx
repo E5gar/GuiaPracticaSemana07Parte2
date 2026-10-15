@@ -17,13 +17,13 @@ const details = [
     id: 'phone',
     icon: Phone,
     label: 'Teléfono',
-    value: '(064) 000 000',
+    value: '+51 931 425 914',
   },
   {
     id: 'mail',
     icon: Mail,
     label: 'Correo',
-    value: 'hola@musiccentro.pe',
+    value: 'contacto@musiccentro.pe',
   },
 ]
 
@@ -36,7 +36,7 @@ const LocationSection = () => (
           06 / Ubicación
         </p>
         <h2 className="mt-6 font-serif text-4xl font-semibold leading-[1.1] tracking-[-0.02em] md:text-5xl">
-          Pasa por la tienda en Chilca
+          Pasa por nuestra tienda
         </h2>
       </div>
       <div className="mt-14 grid gap-12 lg:grid-cols-2 lg:gap-[70px]">
@@ -69,7 +69,7 @@ const LocationSection = () => (
           </a>
         </div>
         <iframe
-          title="Lorem ipsum dolor"
+          title="Mapa de MusicCentro en Av. Huancavelica N° 606, Chilca"
           src="https://maps.google.com/maps?q=Av.%20Huancavelica%20606%2C%20Chilca%2C%20Huancayo&z=16&output=embed"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"

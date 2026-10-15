@@ -13,7 +13,7 @@ const AgendaSection = () => (
           Sábados con música en vivo y vinilos en cabina
         </h2>
         <p className="mt-6 text-[15px] leading-[1.9] text-charcoal dark:text-paper-dim">
-          Los próximos encuentros programados en la tienda hasta fin de año.
+          Próximos eventos programados en la tienda hasta fin de año.
         </p>
       </div>
       <ul className="mt-14 border-t border-line dark:border-night-line">

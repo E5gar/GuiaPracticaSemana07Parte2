@@ -9,11 +9,11 @@ const Hero = () => (
           Disquera independiente / Chilca, Huancayo
         </p>
         <h1 className="mt-8 font-serif text-5xl font-medium leading-[0.98] tracking-[-0.02em] md:text-7xl">
-          Todos los géneros en <em className="italic">una sola esquina</em> de Chilca
+          Todos los géneros en <em className="italic">un solo lugar</em> de Huancayo
         </h1>
         <p className="mt-8 max-w-[540px] text-[15px] leading-[1.9] text-charcoal dark:text-paper-dim">
           Vinilos, CD y casetes de huayno, cumbia, rock, música tropical, jazz y electrónica.
-          Este panel reúne el inventario, la agenda y los pendientes diarios de MusicCentro.
+          Dashboard de inventario, agenda y pendientes de MusicCentro.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
           <a
@@ -43,7 +43,7 @@ const Hero = () => (
       <figure>
         <img
           src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80"
-          alt="Lorem ipsum dolor"
+          alt="Ambiente de la tienda MusicCentro"
           className="aspect-[4/3] w-full object-cover grayscale"
         />
         <figcaption className="mt-4 flex items-center justify-between border-t border-line pt-4 text-[11px] font-medium uppercase tracking-[0.16em] text-charcoal dark:border-night-line dark:text-paper-dim">

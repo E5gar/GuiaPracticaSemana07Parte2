@@ -18,11 +18,10 @@ const TaskPanel = ({ tasks, filter, sort, onAdd, onRemove, onToggle, onFilter, o
             05 / Pendientes
           </p>
           <h2 className="mt-6 font-serif text-4xl font-semibold leading-[1.1] tracking-[-0.02em] md:text-5xl">
-            Gestor de tareas de la tienda
+            Control de tareas de la tienda
           </h2>
           <p className="mt-6 text-[15px] leading-[1.9] text-charcoal dark:text-paper-dim">
-            {pending} pendientes de {tasks.length} registrados. Reposición, proveedores, eventos y
-            atención al cliente en un solo lugar.
+            {pending} pendientes de {tasks.length} registrados.
           </p>
         </div>
         <div className="mt-14 grid gap-12 lg:grid-cols-[1fr_1.5fr] lg:gap-[70px]">

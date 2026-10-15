@@ -40,11 +40,10 @@ const CatalogSection = () => {
               02 / Catálogo
             </p>
             <h2 className="mt-6 font-serif text-4xl font-semibold leading-[1.1] tracking-[-0.02em] md:text-5xl">
-              Lo que hoy está en las repisas
+              Lo que hoy tenemos
             </h2>
             <p className="mt-6 text-[15px] leading-[1.9] text-charcoal dark:text-paper-dim">
-              Una muestra del inventario con precio y existencias. Los títulos con pocas unidades
-              se marcan para priorizar la reposición.
+              Inventario con precio y existencias.
             </p>
           </div>
           <div className="flex gap-2">
@@ -93,7 +92,7 @@ const CatalogSection = () => {
                 <figure className="overflow-hidden">
                   <img
                     src={item.image}
-                    alt="Lorem ipsum dolor"
+                    alt={`${item.title}, ${item.artist}`}
                     loading="lazy"
                     className="aspect-[4/3] w-full object-cover grayscale transition duration-500 group-hover:scale-[1.03] group-hover:grayscale-0"
                   />
@@ -124,7 +123,7 @@ const CatalogSection = () => {
               >
                 <img
                   src={item.image}
-                  alt="Lorem ipsum dolor"
+                  alt={`${item.title}, ${item.artist}`}
                   loading="lazy"
                   className="h-16 w-20 object-cover grayscale transition duration-500 group-hover:grayscale-0"
                 />

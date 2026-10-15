@@ -1,4 +1,4 @@
-import genres from '../data/genres'
+import genres from '../data/genres';
 
 const GenreSection = () => (
   <section
@@ -12,11 +12,11 @@ const GenreSection = () => (
           03 / Géneros
         </p>
         <h2 className="mt-6 font-serif text-4xl font-semibold leading-[1.1] tracking-[-0.02em] md:text-5xl">
-          Ocho familias sonoras, una misma tienda
+          8 géneros musicales, una misma tienda
         </h2>
         <p className="mt-6 max-w-[420px] text-[15px] leading-[1.9] text-charcoal dark:text-paper-dim">
-          MusicCentro no se limita a un solo sonido. El inventario se reparte entre la música de
-          los Andes y la del resto del mundo.
+          MusicCentro no se limita a un solo tipo de música. Contamos con contenido tanto nacional
+          como internacional.
         </p>
       </div>
       <ul className="border-t border-line dark:border-night-line">
@@ -41,7 +41,7 @@ const GenreSection = () => (
             </div>
             <img
               src={genre.image}
-              alt="Lorem ipsum dolor"
+              alt={`Género ${genre.name}`}
               loading="lazy"
               className="col-span-2 aspect-[4/3] w-full object-cover grayscale transition duration-500 group-hover:grayscale-0 sm:col-span-1"
             />
@@ -50,6 +50,6 @@ const GenreSection = () => (
       </ul>
     </div>
   </section>
-)
+);
 
-export default GenreSection
+export default GenreSection;

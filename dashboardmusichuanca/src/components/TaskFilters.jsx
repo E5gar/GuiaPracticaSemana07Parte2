@@ -31,7 +31,7 @@ const TaskFilters = ({ filter, sort, onFilter, onSort }) => (
       className="inline-flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.14em] text-charcoal transition-colors duration-[250ms] hover:text-ink dark:text-paper-dim dark:hover:text-paper"
     >
       <ArrowUpDown size={14} strokeWidth={1.5} />
-      {sort === 'asc' ? 'Fecha más próxima primero' : 'Fecha más lejana primero'}
+      {sort === 'asc' ? 'Ordenar por fecha más lejana' : 'Ordenar por fecha más cercana'}
     </button>
   </div>
 )
