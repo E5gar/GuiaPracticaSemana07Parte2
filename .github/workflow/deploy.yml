@@ -1,0 +1,50 @@
+name: Deploy GitHub
+
+on:
+  push:
+    branches: ['main']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Dependencias
+        working-directory: ./NOMBRE_CARPETA_PROYECTO
+        run: npm install
+
+      - name: Compilar
+        working-directory: ./NOMBRE_CARPETA_PROYECTO
+        run: npx vite build --base=/${{ github.event.repository.name }}/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Artefacto
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './NOMBRE_CARPETA_PROYECTO/dist'
+
+      - name: Desplegar
+        id: deployment
+        uses: actions/deploy-pages@v4
