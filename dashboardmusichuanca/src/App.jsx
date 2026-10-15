@@ -5,7 +5,8 @@ import tasksReducer, {
   createInitialState,
 } from './hooks/useTasksReducer';
 import { writeStoredValue } from './hooks/useLocalStorage';
-import { ThemeProvider, ThemeContext } from './contexts/ThemeContext';
+import { ThemeProvider } from './contexts/ThemeContext';
+import { ThemeContext } from './contexts/ThemeContextObject';
 import seedTasks from './data/tasks';
 import Header from './components/Header';
 import Hero from './components/Hero';
