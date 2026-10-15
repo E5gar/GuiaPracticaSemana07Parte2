@@ -1,32 +1,32 @@
-﻿import { useMemo, useCallback, useRef } from 'react'
+﻿import { memo, useMemo } from 'react'
+import TaskItem from './TaskItem'
 
-const TaskList = ({ tasks, onRemove, onToggle }) => {
-  const inputRef = useRef(null)
-
-  // TODO: useMemo para filtrar/ordenar tareas sin recalcular en cada render
+const TaskList = ({ tasks, filter, sort, onRemove, onToggle }) => {
   const processedTasks = useMemo(() => {
-    // ...
-  }, [tasks])
+    const visible = tasks.filter((task) => {
+      if (filter === 'pending') return !task.done
+      if (filter === 'done') return task.done
+      return true
+    })
+    const direction = sort === 'asc' ? 1 : -1
+    return [...visible].sort((a, b) => direction * a.dueDate.localeCompare(b.dueDate))
+  }, [tasks, filter, sort])
 
-  // TODO: useCallback para estabilizar handlers pasados a hijos
-  const handleRemove = useCallback((id) => {
-    onRemove(id)
-  }, [onRemove])
-
-  // TODO: useEffect para focus al input cuando se añade tarea
-  // ...
+  if (processedTasks.length === 0) {
+    return (
+      <p className="border-b border-line py-10 text-[15px] text-charcoal dark:border-night-line dark:text-paper-dim">
+        No hay pendientes con este filtro.
+      </p>
+    )
+  }
 
   return (
     <ul>
-      {processedTasks.map(task => (
-        <li key={task.id}>
-          <span>{task.title}</span>
-          <button onClick={() => handleRemove(task.id)}>Eliminar</button>
-        </li>
+      {processedTasks.map((task) => (
+        <TaskItem key={task.id} task={task} onRemove={onRemove} onToggle={onToggle} />
       ))}
-      <input ref={inputRef} placeholder="Nueva tarea..." />
     </ul>
   )
 }
 
-export default TaskList
+export default memo(TaskList)
